@@ -8,10 +8,12 @@ export const Home = () => {
 
     let icono = 'nublado';
     let color = 'icono ';
+    let color2 = 'icono-semana ';
 
     switch( icono ) {
         case 'nublado': {
             color += 'nublado';
+            color2 += 'nublado';
         } break;
     }
 
@@ -43,11 +45,56 @@ export const Home = () => {
                             </div>
                         </div>
                         <hr />
-                        <div className="semana d-flex justify-content-around">
-                            <div>
-                                <p>Lunes</p>
-                                <FontAwesomeIcon icon={faCloud} />
-                                <p>30°C</p><p>15°C</p>
+                        <div className="d-flex justify-content-around">
+                            <div className="d-flex flex-column align-items-center">
+                                <div className="d-flex flex-column align-items-center">
+                                    <FontAwesomeIcon icon={faCloud} className={ color2 } />
+                                    <p>Lunes</p>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <p className="temp-maxima">30°C</p>
+                                    <p className="temp-minima align-bottom">15°C</p>
+                                </div>
+                            </div>
+                            <div className="d-flex flex-column align-items-center">
+                                <div className="d-flex flex-column align-items-center">
+                                    <FontAwesomeIcon icon={faCloud} className={ color2 } />
+                                    <p>Martes</p>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <p className="temp-maxima">30°C</p>
+                                    <p className="temp-minima align-bottom">15°C</p>
+                                </div>
+                            </div>
+                            <div className="d-flex flex-column align-items-center">
+                                <div className="d-flex flex-column align-items-center">
+                                    <FontAwesomeIcon icon={faCloud} className={ color2 } />
+                                    <p>Miercoles</p>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <p className="temp-maxima">30°C</p>
+                                    <p className="temp-minima align-bottom">15°C</p>
+                                </div>
+                            </div>
+                            <div className="d-flex flex-column align-items-center">
+                                <div className="d-flex flex-column align-items-center">
+                                    <FontAwesomeIcon icon={faCloud} className={ color2 } />
+                                    <p>Jueves</p>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <p className="temp-maxima">30°C</p>
+                                    <p className="temp-minima align-bottom">15°C</p>
+                                </div>
+                            </div>
+                            <div className="d-flex flex-column align-items-center">
+                                <div className="d-flex flex-column align-items-center">
+                                    <FontAwesomeIcon icon={faCloud} className={ color2 } />
+                                    <p>Viernes</p>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                    <p className="temp-maxima">30°C</p>
+                                    <p className="temp-minima align-bottom">15°C</p>
+                                </div>
                             </div>
                         </div>
                     </div>

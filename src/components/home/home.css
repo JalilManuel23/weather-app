@@ -12,6 +12,10 @@
     font-size: 3rem;
 }
 
+.icono-semana {
+    font-size: 1.9rem;
+}
+
 .temp-actual {
     font-size: 3rem;
     font-weight: bold;
@@ -58,3 +62,4 @@
 .nublado {
     color: rgb(124, 118, 118);
 }
+

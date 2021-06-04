@@ -1,0 +1,60 @@
+.form1 {
+    min-height: 80vh;
+}
+
+.semana {
+    width: 100%;
+}
+
+/* temperatura-icono */
+
+.icono {
+    font-size: 3rem;
+}
+
+.temp-actual {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(69, 75, 78);
+}
+
+.tiempo {
+    font-style: italic;
+}
+
+.icono,
+.temp-actual,
+.tiempo {
+    padding: 0;
+    margin: 0;
+}
+
+.ciudad {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgb(2, 45, 124);
+}
+
+.temp-maxima,
+.temp-minima {
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+}
+
+.temp-maxima {
+    font-weight: 500;
+    color: rgb(73, 64, 64);
+    font-size: 1.1rem;
+}
+
+.temp-minima {
+    font-weight: 100;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+/* colores iconos */
+.nublado {
+    color: rgb(124, 118, 118);
+}

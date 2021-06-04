@@ -1,19 +1,27 @@
 import React from 'react';
 import { Navbar } from '../navbar/Navbar';
 import './home.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloud } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloud, faSun } from '@fortawesome/free-solid-svg-icons';
+
+import { InfoDia } from '../infoDia/InfoDia';
+
 
 export const Home = () => {
 
-    let icono = 'nublado';
+    let description = 'nublado';
     let color = 'icono ';
-    let color2 = 'icono-semana ';
+    let icono = null;
 
-    switch( icono ) {
+    switch( description ) {
         case 'nublado': {
             color += 'nublado';
-            color2 += 'nublado';
+            icono = faCloud;
+        } break;
+
+        case 'soleado': {
+            color += 'soleado';
+            icono = faSun;
         } break;
     }
 
@@ -21,7 +29,7 @@ export const Home = () => {
         <>
             <Navbar />
             <div className="container">
-                <div className="row">
+                <div className="row min-h-100">
                     <div className="col-md-6 form1 d-flex flex-column justify-content-center">
                         <h3>Consulta el clima:</h3>
                         <form>
@@ -32,21 +40,10 @@ export const Home = () => {
                         </form>
                     </div>
                     <div className="col-md-6 d-flex flex-column justify-content-center">
-                        <div className="d-flex flex-column align-items-center">
-                            <div className="d-flex flex-column align-items-center">
-                                <FontAwesomeIcon icon={faCloud} className={ color } />
-                                <p className="temp-actual">30°C</p>
-                                <p className="tiempo">Nublado</p>
-                            </div>
-                            <p className="ciudad">Durango, Dgo.</p>
-                            <div className="d-flex align-items-center">
-                                <p className="temp-maxima">30°C</p>
-                                <p className="temp-minima align-bottom">15°C</p>
-                            </div>
-                        </div>
+                        <InfoDia />
                         <hr />
                         <div className="d-flex justify-content-around">
-                            <div className="d-flex flex-column align-items-center">
+                            {/* <div className="d-flex flex-column align-items-center">
                                 <div className="d-flex flex-column align-items-center">
                                     <FontAwesomeIcon icon={faCloud} className={ color2 } />
                                     <p>Lunes</p>
@@ -85,17 +82,7 @@ export const Home = () => {
                                     <p className="temp-maxima">30°C</p>
                                     <p className="temp-minima align-bottom">15°C</p>
                                 </div>
-                            </div>
-                            <div className="d-flex flex-column align-items-center">
-                                <div className="d-flex flex-column align-items-center">
-                                    <FontAwesomeIcon icon={faCloud} className={ color2 } />
-                                    <p>Viernes</p>
-                                </div>
-                                <div className="d-flex align-items-center">
-                                    <p className="temp-maxima">30°C</p>
-                                    <p className="temp-minima align-bottom">15°C</p>
-                                </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

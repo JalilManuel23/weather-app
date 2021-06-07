@@ -4,8 +4,8 @@ import { Home } from './components/home/Home';
 import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <Home />
-  </React.StrictMode>,
+  </>,
   document.getElementById('root')
 );

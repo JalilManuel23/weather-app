@@ -1,47 +1,27 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloud, faSun } from '@fortawesome/free-solid-svg-icons';
+import { useFetch } from '../../hooks/useFetch';
 
-import './infoDia.css';
+export const InfoDia = ({ ciudad }) => {
 
-export const InfoDia = ({ tipoDia }) => {
+    const { main, weather } = useFetch( ciudad );
 
-    let description = 'nublado'; 
-    let color = ( tipoDia === 'dia' ) ? 'icono ' : 'icono-semana ';
-    let icono = null;
-
-    switch( description ) {
-        case 'nublado': {
-            color += 'nublado';
-            icono = faCloud;
-        } break;
-
-        case 'soleado': {
-            color += 'soleado';
-            icono = faSun;
-        } break;
-    }
+    const { temp, temp_min, temp_max } = main;
+    const { main: mainWeather, description, icon } = weather;
 
     return (
         <div className="d-flex flex-column align-items-center">
             <div className="d-flex flex-column align-items-center">
-                <FontAwesomeIcon icon={ icono } className={ color } />
-
-                { tipoDia == 'dia' ? 
-                    <>
-                        <p className="temp-actual">30°C</p>
-                        <p className="tiempo">Nublado</p>
-                    </>
-                    :
-                    <p>Lunes</p>
-                }
+                <img src={ `http://openweathermap.org/img/wn/${ icon }@2x.png` } alt={ description } />
+                <p className="temp-actual">{ temp }°C</p>
+                <h6>{ mainWeather }</h6>
+                <p className="tiempo">{ description }</p>
+                <p className="ciudad">{ ciudad }</p>
             </div>
 
-            { tipoDia == 'dia' && <p className="ciudad">Durango, Dgo.</p> }
 
             <div className="d-flex align-items-center">
-                <p className="temp-maxima">30°C</p>
-                <p className="temp-minima align-bottom">15°C</p>
+                <p className="temp-maxima">{ temp_max }°C</p>
+                <p className="temp-minima align-bottom">{ temp_min }°C</p>
             </div>
         </div>
     )
